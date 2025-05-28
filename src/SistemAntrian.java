@@ -115,6 +115,36 @@ public class SistemAntrian {
 
     }
 
+    public void tampilkanRiwayat() {
+        NodeTransaksi current = headTransaksi;
+        while (current != null) {
+            current.data.tampilkanTransaksi(); 
+        }
+    }
+
+    public void sortRiwayatDESC(){
+        if (headTransaksi==null || headTransaksi.next==null) {
+            return;
+        }
+        boolean tukar;
+        do {
+            tukar=false;
+            NodeTransaksi current = headTransaksi;
+
+            while (current.next != null) {
+                String nama1 = current.data.pasien.nama.toLowerCase();
+                String nama2 = current.next.data.pasien.nama.toLowerCase();
+                if (nama1.compareTo(nama2) < 0) {
+                    TransaksiLayanan temp = current.data;
+                    current.data = current.next.data;
+                    current.next.data = temp;
+                    tukar = true;
+                }
+                current = current.next;
+            }
+        } while (tukar);
+    }
+
     public int sisaAntrian() {
         return size;
     }

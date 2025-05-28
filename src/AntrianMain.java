@@ -12,6 +12,8 @@ public class AntrianMain {
             System.out.println("2. Lihat Antrian");
             System.out.println("3. Layani Antrian");
             System.out.println("4. Cek Sisa Antrian");
+            System.out.println("5. Lihat Riwayat Transaksi");
+            System.out.println("6. Sort");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
 
@@ -40,13 +42,20 @@ public class AntrianMain {
                     break;
                 case 4:
                     System.out.println("Sisa antrian: " + antrian.sisaAntrian());
+                    break;
+                case 5:
+                    System.out.println("-- Riwayat Transaksi --");
+                    antrian.tampilkanRiwayat();
+                    break;
+                case 6:
+                    System.out.println("-- Pengurutan Riwayat Transaksi --");
+                    antrian.sortRiwayatDESC();
+                    break;
                 case 0:
                     System.out.println("Terima kasih telah menggunakan sistem antrian.");
                     break;
-
                 default:
                     System.out.println("Pilihan tidak valid. Silakan pilih lagi.");
-                    break;
             }
         } while (pilihan != 0);
         input.close();
