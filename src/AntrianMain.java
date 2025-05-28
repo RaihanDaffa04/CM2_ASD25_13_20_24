@@ -1,26 +1,24 @@
- import java.util.Scanner;
+import java.util.Scanner;
 
 public class AntrianMain {
-   
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         SistemAntrian antrian = new SistemAntrian();
         Scanner input = new Scanner(System.in);
-
-        Dokter dokter1 = new Dokter("D001", "Dr. Budi");
-
         int pilihan;
         do {
             System.out.println("\nSistem Antrian Klinik");
             System.out.println("1. Tambah Pasien ke Antrian");
             System.out.println("2. Lihat Antrian");
+            System.out.println("3. Layani Antrian");
+            System.out.println("4. Cek Sisa Antrian");
             System.out.println("5. Lihat Riwayat Transaksi");
             System.out.println("6. Sort");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
-            
+
             pilihan = input.nextInt();
-            input.nextLine(); 
+            input.nextLine();
 
             switch (pilihan) {
                 case 1:
@@ -39,6 +37,12 @@ public class AntrianMain {
                 case 2:
                     antrian.lihatAntrian();
                     break;
+                case 3:
+                    antrian.layaniPasien();
+                    break;
+                case 4:
+                    System.out.println("Sisa antrian: " + antrian.sisaAntrian());
+                    break;
                 case 5:
                     System.out.println("-- Riwayat Transaksi --");
                     antrian.tampilkanRiwayat();
@@ -53,9 +57,7 @@ public class AntrianMain {
                 default:
                     System.out.println("Pilihan tidak valid. Silakan pilih lagi.");
             }
-        } while (pilihan != 0);  
+        } while (pilihan != 0);
         input.close();
     }
 }
-    
-
