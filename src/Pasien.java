@@ -7,7 +7,7 @@ public class Pasien {
         this.keluhan = keluhan;
     }
 
-    void tampil() {
-        System.out.println(nama + " | " + nik + " | " + keluhan);
+    void tampilkanInformasi() {
+        System.out.println(nama + "\t" + nik + "\t" + keluhan);
     }
 }
