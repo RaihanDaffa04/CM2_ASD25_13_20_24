@@ -14,6 +14,8 @@ public class AntrianMain {
             System.out.println("\nSistem Antrian Klinik");
             System.out.println("1. Tambah Pasien ke Antrian");
             System.out.println("2. Lihat Antrian");
+            System.out.println("5. Lihat Riwayat Transaksi");
+            System.out.println("6. Sort");
             System.out.println("0. Keluar");
             System.out.print("Pilih: ");
             
@@ -37,14 +39,19 @@ public class AntrianMain {
                 case 2:
                     antrian.lihatAntrian();
                     break;
-
+                case 5:
+                    System.out.println("-- Riwayat Transaksi --");
+                    antrian.tampilkanRiwayat();
+                    break;
+                case 6:
+                    System.out.println("-- Pengurutan Riwayat Transaksi --");
+                    antrian.sortRiwayatDESC();
+                    break;
                 case 0:
                     System.out.println("Terima kasih telah menggunakan sistem antrian.");
                     break;
-
                 default:
                     System.out.println("Pilihan tidak valid. Silakan pilih lagi.");
-                    break;
             }
         } while (pilihan != 0);  
         input.close();
