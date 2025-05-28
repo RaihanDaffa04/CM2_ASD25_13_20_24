@@ -63,5 +63,4 @@ public class SistemAntrian {
             }
         } while (tukar);
     }
-    
 }
