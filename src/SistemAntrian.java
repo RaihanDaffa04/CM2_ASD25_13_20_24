@@ -1,38 +1,35 @@
 public class SistemAntrian {
-    NodePasien head = null;
-    NodeDokter headDokter = null;
-
+    NodePasien headPasien=null;
+    int size;
     
-    public SistemAntrian() {
-        tambahDokter(new Dokter("dr01", "Wike Ratanca"));
-        tambahDokter(new Dokter("dr02", "Santi Runica"));
-        tambahDokter(new Dokter("dr03", "Aam Antanica"));
-        tambahDokter(new Dokter("dr04", "Slamet Sugito"));
+    public boolean isEmpty(){
+        return size == 0;
     }
 
-    void tambahDokter(Dokter d) {
-        NodeDokter baru = new NodeDokter(d);
-        if (headDokter == null) {
-            headDokter = baru;
+    public void tambahPasien(Pasien pasien) {
+        NodePasien newNode = new NodePasien(headPasien, pasien, null);
+            if (headPasien == null) {  
+                headPasien = newNode;  
+            } else {
+                NodePasien temp = headPasien;
+                while (temp.next != null) {  
+                    temp = temp.next;
+                }
+                temp.next = newNode; 
+            size++; 
+        }
+    }
+
+    public void lihatAntrian() {
+        if (headPasien == null) {
+            System.out.println("Tidak ada pasien dalam antrian.");
         } else {
-            NodeDokter current = headDokter;
-            while (current.next != null) {
-                current = current.next;
+            NodePasien temp = headPasien;
+            System.out.println("-- Antrian Pasien --");
+            while (temp != null) {
+                System.out.println("Nama: " + temp.data.nama + " | NIK: " + temp.data.nik + " | Keluhan: " + temp.data.keluhan);
+                temp = temp.next;  
             }
-            current.next = baru;
         }
-    }
-
-    Dokter cariDokter(String kode) {
-        NodeDokter current = headDokter;
-        while (current != null) {
-            if (current.data.id.equalsIgnoreCase(kode)) {
-                return current.data;
-            }
-            current = current.next;
-        }
-        return null;
-    }
-
-    
+    }  
 }
