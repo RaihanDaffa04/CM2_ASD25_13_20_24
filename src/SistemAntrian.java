@@ -114,6 +114,4 @@ public class SistemAntrian {
     System.out.println(">> Pasien telah dilayani, transaksi berhasil dicatat");
     return p;
 }
-
-
 }
