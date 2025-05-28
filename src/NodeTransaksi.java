@@ -7,4 +7,7 @@ public class NodeTransaksi {
         this.data = data;
         this.next=null;
     }
+    NodeTransaksi(TransaksiLayanan data){
+        this.data = data;
+    }
 }
