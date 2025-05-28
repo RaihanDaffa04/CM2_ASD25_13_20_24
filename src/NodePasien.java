@@ -1,8 +1,10 @@
 public class NodePasien {
     Pasien data;
-    NodePasien next;
+    NodePasien prev, next;
 
-    NodePasien(Pasien data) {
+    NodePasien(NodePasien prev, Pasien data, NodePasien next) {
+        this.prev=null;
         this.data = data;
+        this.next=null;
     }
 }

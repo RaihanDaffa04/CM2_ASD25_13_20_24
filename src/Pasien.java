@@ -8,6 +8,6 @@ public class Pasien {
     }
 
     void tampil() {
-        System.out.println(nama + " | " + nik + " | " + keluhan);
+        System.out.println(nama + "\t" + nik + "\t" + keluhan);
     }
 }
