@@ -15,7 +15,6 @@ public class TransaksiLayanan {
     }
 
     void tampilkanTransaksi() {
-        System.out.println(pasien.nama + "\t" + dokter.nama +
-                "\t" + durasi + "\t" + biaya);
+        System.out.println(pasien.nama + "\t" + dokter.nama + "\t" + durasi + "\t" + biaya);
     }
 }

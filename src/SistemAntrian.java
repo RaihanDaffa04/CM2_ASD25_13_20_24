@@ -28,9 +28,9 @@ public class SistemAntrian {
         } else {
             NodePasien temp = headPasien;
             System.out.println("-- Antrian Pasien --");
+            System.out.println("Nama\t  NIK\t  Keluhan");
             while (temp != null) {
-                System.out.println(
-                        "Nama: " + temp.data.nama + " | NIK: " + temp.data.nik + " | Keluhan: " + temp.data.keluhan);
+                System.out.println(temp.data.nama + "\t  " + temp.data.nik + "\t  " + temp.data.keluhan);
                 temp = temp.next;
             }
         }
@@ -79,7 +79,8 @@ public class SistemAntrian {
             current = current.next;
         }
         Scanner sc = new Scanner(System.in);
-        System.out.print("\ninput kode dokter: ");
+        System.out.println("Pilih dokter:");
+        System.out.print("Input kode dokter: ");
         String kode = sc.nextLine();
         Dokter dipilih = null;
         current = headDokter;
@@ -117,8 +118,10 @@ public class SistemAntrian {
 
     public void tampilkanRiwayat() {
         NodeTransaksi current = headTransaksi;
+        System.out.println("Nama \tNama Dokter\tDurasi \tTotal");
         while (current != null) {
             current.data.tampilkanTransaksi(); 
+            current=current.next;
         }
     }
 
