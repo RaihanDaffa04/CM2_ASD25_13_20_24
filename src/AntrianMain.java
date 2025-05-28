@@ -28,13 +28,13 @@ public class AntrianMain {
                     String nik = input.nextLine();
                     System.out.print("Input Keluhan Pasien: ");
                     String keluhan = input.nextLine();
-
                     Pasien pasien = new Pasien(nama, nik, keluhan);
                     antrian.tambahPasien(pasien);
                     System.out.println("Pasien " + nama + " telah ditambahkan ke dalam antrian.");
                     break;
 
                 case 2:
+
                     antrian.lihatAntrian();
                     break;
                 case 3:
@@ -50,6 +50,7 @@ public class AntrianMain {
                 case 6:
                     System.out.println("-- Pengurutan Riwayat Transaksi --");
                     antrian.sortRiwayatDESC();
+                    antrian.tampilkanRiwayat();
                     break;
                 case 0:
                     System.out.println("Terima kasih telah menggunakan sistem antrian.");
