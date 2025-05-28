@@ -18,6 +18,5 @@ public class SistemAntrian {
             temp.next = newNode; 
         size++; 
     }
-
 }
 }
