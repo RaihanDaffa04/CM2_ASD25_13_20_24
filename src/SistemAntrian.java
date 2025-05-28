@@ -7,7 +7,7 @@ public class SistemAntrian {
     }
 
     public void tambahPasien(Pasien pasien) {
-        NodePasien newNode = new NodePasien(pasien);
+        NodePasien newNode = new NodePasien(headPasien, pasien, null);
             if (headPasien == null) {  
                 headPasien = newNode;  
             } else {
